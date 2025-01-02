@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "npx prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,7 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "migrate-mongo": "^11.0.0",
     "prisma": "^6.1.0"
   }
-
 }
