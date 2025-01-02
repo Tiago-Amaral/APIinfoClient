@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "engines": {
-    "node": "14.x"
+    "node": "22.x"
   },
   "main": "index.js",
   "scripts": {
@@ -23,4 +23,5 @@
   "devDependencies": {
     "prisma": "^6.1.0"
   }
+
 }
