@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rota para criar um novo cliente
+// Rota para criar um novo cliente..
 
 app.use(express.json());
 app.post('/clients', async (req, res) => {
