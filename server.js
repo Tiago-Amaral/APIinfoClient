@@ -8,7 +8,16 @@ const prisma = new PrismaClient()
 
 const app = express();
 
-app.use(cors());
+// Configuração do middleware CORS
+app.use(
+  cors({
+    origin: "*", // Permite todas as origens. Em produção, substitua "*" pelo domínio permitido, por exemplo: "http://127.0.0.1:5500"
+    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos HTTP permitidos
+    allowedHeaders: ["Content-Type", "Authorization"], // Cabeçalhos permitidos
+  })
+); 
+
+
 app.use(express.json());
 
 // Rota para criar um novo cliente..
