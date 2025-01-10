@@ -11,7 +11,7 @@ const app = express();
 // Configuração do middleware CORS
 app.use(
   cors({
-    origin: "https://dulcet-fox-b3bd6b.netlify.app", // Permite todas as origens. Em produção, substitua "*" pelo domínio permitido, por exemplo: "http://127.0.0.1:5500"
+    origin: "https://dapper-cobbler-9c5346.netlify.app/", // Permite todas as origens. Em produção, substitua "*" pelo domínio permitido, por exemplo: "http://127.0.0.1:5500"
     methods: ["GET", "POST", "PUT", "DELETE"], // Métodos HTTP permitidos
     allowedHeaders: ["Content-Type", "Authorization"], // Cabeçalhos permitidos
   })
