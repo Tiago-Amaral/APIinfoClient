@@ -24,17 +24,26 @@ app.use(express.json());
 
 app.use(express.json());
 app.post('/clients', async (req, res) => {
-  const { sexo, address, product, value, } = req.body;
+  const { sexo, address, product, value } = req.body;
+
+  // Converter o valor para um número antes de salvar no banco
+  const valueNumber = parseFloat(value); // Isso vai transformar a string "20" em 20
+
+  if (isNaN(valueNumber)) {
+    return res.status(400).json({ error: "O valor fornecido não é um número válido" });
+  }
+
   await prisma.client_db.create({
     data: {
       sexo,
       address,
       product,
-      value,
+      value: valueNumber, // Usando o valor convertido
     }
-  })
-  res.status(201).json(req.body)
-})
+  });
+
+  res.status(201).json(req.body);
+});
 
 app.get('/clients', async (req, res) => {
   const users = await prisma.client_db.findMany()
